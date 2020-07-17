@@ -18,5 +18,4 @@ cv2.putText(img,'Chihuahua',(10,500),font,2,(255,255,255),4)
 
 cv2.imshow('Paint',img)
 cv2.waitKey(0)
-cv2.destroyAllWindow
-s()
+cv2.destroyAllWindows()
