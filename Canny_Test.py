@@ -2,14 +2,16 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 
-img = cv2.imread('ux2y28honur41.png', 0)
-edges = cv2.Canny(img, 50, 100)
-edges2 = cv2.Canny(img, 50, 150)
-edges3 = cv2.Canny(img, 50, 200)
-edges4 = cv2.Canny(img, 254, 255)
-edges5 = cv2.Canny(img, 175, 200)
+img = cv2.imread('./trainImg/0.0001.jpg', 0)
+blur = cv2.blur(img,(15,15))
 
-plt.subplot(231), plt.imshow(img, cmap='gray'), plt.title('Original Image')
+edges = cv2.Canny(blur, 10, 50)
+edges2 = cv2.Canny(blur, 30, 80)
+edges3 = cv2.Canny(blur, 30, 85)
+edges4 = cv2.Canny(blur, 30, 90)
+edges5 = cv2.Canny(blur, 10, 120)
+
+plt.subplot(231), plt.imshow(blur, cmap='gray'), plt.title('Original Image')
 plt.subplot(232), plt.imshow(edges, cmap='gray'), plt.title('Edge Image')
 plt.subplot(233), plt.imshow(edges2, cmap='gray'), plt.title('Edge2 Image')
 plt.subplot(234), plt.imshow(edges3, cmap='gray'), plt.title('Edge3 Image')
